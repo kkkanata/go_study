@@ -20,9 +20,9 @@ func main() {
 			}
 		}
 		if !can {
-			fmt.Println("No")
+			fmt.Println("NO")
 			return
 		}
 	}
-	fmt.Println("Yes")
+	fmt.Println("YES")
 }
