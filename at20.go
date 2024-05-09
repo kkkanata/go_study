@@ -20,7 +20,7 @@ func main() {
 				}
 			}
 		}
-		if count == 2 {
+		if count >= 2 {
 			fmt.Println("Yes")
 		} else {
 			fmt.Println("No")
