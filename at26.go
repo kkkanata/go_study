@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-//不完全
+//不完全 入れ替えの順序の規則性に着目
 
 func main() {
 	var n int
