@@ -18,7 +18,4 @@ func main() {
 		x += 24
 	}
 	fmt.Printf("%d:%d",x, y)
-
-
-	
 }

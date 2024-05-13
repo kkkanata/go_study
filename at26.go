@@ -30,13 +30,6 @@ LOOP:
 				b = true
 			}
 		}
-		if b {
-			rs = append(rs, []int{min, a[k]})
-			w = a[k]
-			a[k] = min
-			a[wn] = w
-			count++
-		}
 		b2 = true
 		for i := 0; i < n-1; i++ {
 			if a[i] > a[i+1] {
@@ -46,6 +39,14 @@ LOOP:
 		if b2 {
 			break LOOP
 		}
+		if b {
+			rs = append(rs, []int{k+1, wn+1})
+			w = a[k]
+			a[k] = min
+			a[wn] = w
+			count++
+		}
+		
 		k++
 	}
 	fmt.Println(count)
