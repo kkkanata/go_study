@@ -2,49 +2,35 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
-//不完全なコード
+
+// 完成したコード見直すべき
 func main() {
 	var n int
 	fmt.Scan(&n)
 	a := make([]int, n)
+	pos := make([]int, n)
 	for i := 0; i < n; i++ {
 		fmt.Scan(&a[i])
+		pos[a[i]-1] = i
 	}
+	var w, w2 int
 	var rs [][]int
-	min := math.MaxInt32
-	var minNum int
-	//var relative int
-	var b bool
-	var rb bool
 	count := 0
-	k := 0;
-	for ; k < n-1 && !rb; k++ {
-		for i:=k; i < n; i++ {
-			if min > a[i] {
-				min = a[i]
-				minNum = i
-				b=true
-			}
-		}
-		if b {
-			rs = append(rs, []int{k+1, minNum+1})
-			w := a[k]
-			a[minNum] = a[k]
-			a[k] = w
+	for i := 0; i < n-1; i++ {
+		if i+1 != a[i] {
+			rs = append(rs, []int{a[pos[i]], pos[i] + 1})
+			w = a[pos[i]]
+			w2 = pos[i]
+			a[pos[i]] = a[i]
+			pos[i] = pos[a[i]-1]
+			pos[a[i]-1] = w2
+			a[i] = w
 			count++
-		}
-		rb = true
-		for i:=0; i<n-1; i++ {
-			if a[i] > a[i+1] {
-				rb = false
-				break
-			}
 		}
 	}
 	fmt.Println(count)
 	for _, v := range rs {
-		fmt.Printf("%d %d\n",v[0],v[1])
+		fmt.Printf("%d %d\n", v[0], v[1])
 	}
 }

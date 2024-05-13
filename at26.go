@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 //不完全 入れ替えの順序の規則性に着目
@@ -16,7 +17,7 @@ func main() {
 	}
 	var rs [][]int
 	count := 0
-	min := 100000
+	min := math.MaxInt32
 	k, w, wn := 0, 0, 0
 	var b, b2 bool
 LOOP:
@@ -52,5 +53,8 @@ LOOP:
 	fmt.Println(count)
 	for _, v := range rs {
 		fmt.Printf("%d %d\n", v[0], v[1])
+	}
+	for _, v := range a {
+		fmt.Println(v)
 	}
 }
