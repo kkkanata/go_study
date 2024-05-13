@@ -1,5 +1,6 @@
 package main
 
+//5/14　もう一度覚える
 import (
 	"fmt"
 	"sort"
@@ -15,7 +16,7 @@ func main() {
 		sum += a[i]
 	}
 	sum *= n - 1
-	sort.Ints(a)
+	sort.Ints(a) //必要
 	r := n
 	cnt := 0
 	for i := 0; i < n; i++ {
