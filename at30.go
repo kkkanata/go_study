@@ -17,15 +17,20 @@ func main() {
 		acMin[c[i]] = -1
 	}
 	for i:=0;i<n;i++{
-		if a[i] < acMin[c[i]] || acMin[c[i]] == -1 {
+		/*if a[i] < acMin[c[i]] || acMin[c[i]] == -1 {
+			acMin[c[i]] = a[i]
+		}*/
+		if _, ok := acMin[c[i]];ok { //mapの要素の存在を確認
+			acMin[c[i]] = min(a[i],acMin[c[i]])
+		} else {
 			acMin[c[i]] = a[i]
 		}
 	}
-	max := -1
+	maxvalue := -1
 	for _, v := range c {
-		if max < acMin[v] {
-			max = acMin[v]
+		if maxvalue < acMin[v] {
+			maxvalue = acMin[v]
 		}
 	}
-	fmt.Println(max)
+	fmt.Println(maxvalue)
 }
