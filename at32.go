@@ -6,19 +6,21 @@ func main() {
 	var s string
 	fmt.Scan(&s)
 	n := len(s)
-	duplicate := make(map[rune]int, n)
+	res := n * n
+	cnt := make(map[rune]int, n)
 	for _, v := range s {
-		duplicate[v]++
+		cnt[v]++
 	}
-	dupSum := 0
-	sum := (n * (n - 1)) / 2 //最大swap回数を求める
-	for _, v := range duplicate {
-		dupSum += v - 1
+	var b bool
+	for _, v := range cnt {
+		res -= v * v
+		if v > 1 {
+			b = true
+		}
 	}
-	dupSum = ((dupSum + 1) * (dupSum)) / 2
-	if sum-dupSum == 0 {
-		fmt.Println(1)
-	} else {
-		fmt.Println(sum - dupSum)
+	res /= 2
+	if b {
+		res++
 	}
+	fmt.Println(res)
 }
