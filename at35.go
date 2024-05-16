@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-//chatGPTによる解説コピーコード
+//chatGPTによる解説コピーコード 解析推奨
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 

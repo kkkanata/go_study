@@ -1,26 +1,26 @@
 package main
 
-import (
-	"fmt"
-)
-//コピーコード よく見なければならない
+import "fmt"
 
 func main() {
 	var s string
-	var same bool
 	fmt.Scan(&s)
 	n := len(s)
+	res := n * n
 	cnt := make(map[rune]int, n)
 	for _, v := range s {
 		cnt[v]++
 	}
-	res:=(n*(n-1)) //n*nにしてv*vを引いても同じ
+	var b bool
 	for _, v := range cnt {
-		res -=(v*(v-1)) //n*nにしてv*vを引いても同じ
-		if v>1 {same=true}
+		res -= v * v
+		if v > 1 {
+			b = true
+		}
 	}
 	res /= 2
-	if same {res++}
+	if b {
+		res++
+	}
 	fmt.Println(res)
 }
-
