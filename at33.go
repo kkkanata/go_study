@@ -10,12 +10,12 @@ func main() {
 	for _, v := range s {
 		cnt[v]++
 	}
-	dupSum := 0
+	cntSum := 0
 	sum := (n * (n - 1)) / 2
-	for _, v := range duplicate {
-		dupSum += (v*(v-1))/2
+	for _, v := range cnt {
+		cntSum += v
 	}
-	dupSum = ((dupSum + 1) * (dupSum)) / 2
+	cntSum = ((cntSum + 1) * (cntSum)) / 2
 	if sum-dupSum == 0 {
 		fmt.Println(1)
 	} else {
