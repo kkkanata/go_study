@@ -22,7 +22,7 @@ func main() {
 	var n int
 	fmt.Scan(&n)
 	max := 1
-	for i:= 1; i*i*i < n; i++ {
+	for i:= 1; i*i*i <= n; i++ {
 		if check(i*i*i) {max = i*i*i}
 	}
 	fmt.Println(max)
