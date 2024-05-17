@@ -28,9 +28,9 @@ func main() {
 			for j:=0;j<len(sc[c]);j++{
 				result[sc[c][j]] = d
 				//mapの更新処理
-				delete(sc,c)
-				
+				sc[d] = append(sc[d], j)
 			}
+			delete(sc,c)
 		}
 	}
 	for _, v := range result {
