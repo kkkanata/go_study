@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 )
-
+//自分なりに完成させたコード
 func main() {
 	//入力処理
 	var h, w, n int
