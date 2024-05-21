@@ -12,7 +12,8 @@ import (
 	}
 }
 */
-var m = make(map[int]int)
+//再帰をしていく中でfにたいして同じ値を渡すことが多くある場合がある
+//一度計算した値をmapにメモしておくことで一度行った処理を省略できる
 func recursion(n int) int {
 	m := make(map[int]int)
 	var f func(int)int
