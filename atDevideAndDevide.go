@@ -1,7 +1,6 @@
 package main
 //メモ化再帰
 import (
-	
 	"fmt"
 )
 //再帰処理を行う
@@ -29,6 +28,14 @@ func recursion(n int) int {
 	}
 	result := f(n)
 	return result
+}
+
+func recursion(n int) int {
+	if n == 1 {
+		return 0
+	} else {
+		return recursion(n/2) + recursion((n+1)/2) + n
+	}
 }
 
 func main() {
