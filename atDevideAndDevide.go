@@ -12,7 +12,7 @@ import (
 	}
 }
 */
-
+var m = make(map[int]int)
 func recursion(n int) int {
 	m := make(map[int]int)
 	var f func(int)int
