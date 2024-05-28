@@ -15,6 +15,6 @@ func main() {
 	for i := 0; i < n; i++ {
 		sum += a[i]
 	}
-	sum *= n - 1
+	sum = sum * (n - 1)
 	fmt.Println(sum)
 }
