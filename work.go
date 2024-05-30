@@ -9,4 +9,6 @@ func main() {
 	i := 123.76
 	x := math.Ceil(i)
 	fmt.Println(x)
+	u := x
+	fmt.Println(u)
 }
