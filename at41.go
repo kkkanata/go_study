@@ -5,20 +5,21 @@ import (
 )
 
 func main() {
-	var n int
+	var n, m int
 	fmt.Scan(&n)
-	a := make([]int, n)
-	b := make([]int, n)
+	fmt.Scan(&m)
+	h := make([]int, n)
 	for i := 0; i < n; i++ {
-		fmt.Scan(&a[i], &b[i])
+		fmt.Scan(&h[i])
 	}
-	maxNum := 0
-	sum := 0
-	for i := 0; i < n; i++ {
-		if b[maxNum]-a[maxNum] < b[i]-a[i] {
-			maxNum = i
+	count := 0
+	for _, v := range h {
+		if m >= v {
+			m -= v
+			count++
+		} else {
+			break
 		}
-		sum += a[i]
 	}
-	fmt.Printf("%d", sum+b[maxNum]-a[maxNum])
+	fmt.Println(count)
 }
